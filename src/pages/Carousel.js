@@ -1,4 +1,5 @@
 import React from 'react';
+import ControlledCarousel from '../components/ControlledCarousel';
 
 function Carousel() {
   const categories = [
@@ -12,6 +13,7 @@ function Carousel() {
     <div>
       <h1>Carousel</h1>
       Hello World.
+      <ControlledCarousel />
     </div>
   );
 }
