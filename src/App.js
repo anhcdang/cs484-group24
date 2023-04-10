@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css'
+import './static/styles.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Categories from './pages/Categories';
 import Carousel from './pages/Carousel';
