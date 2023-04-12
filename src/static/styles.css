@@ -5,4 +5,62 @@
 .card {
     margin: 20px;
     padding: 10px;
-  }
+}
+
+.carousel-container {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+}
+
+/* align carousel images */
+.carousel-item {
+    text-align: center;
+}
+
+.carousel-indicators {
+    gap: 1rem;
+}
+
+.carousel-indicators button {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+}
+
+.bottom-page-container {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-right-quarter-circle-button {
+    width: 10%;
+    height: 100%;
+    border-radius: 0 100% 0 0 !important;
+    border: none !important;
+    background-color: #62735E !important;
+    text-align: left !important;
+}
+
+.top-left-quarter-circle-button {
+    width: 10%;
+    height: 100%;
+    border-radius: 100% 0 0 0 !important;
+    border: none !important;
+    background-color: #9FB798 !important;
+    text-align: right !important;
+}

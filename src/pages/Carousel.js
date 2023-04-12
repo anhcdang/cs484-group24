@@ -1,18 +1,29 @@
 import React from 'react';
+import UncontrolledCarousel from '../components/UncontrolledCarousel';
+
+import Stack from 'react-bootstrap/Stack';
+import Button from 'react-bootstrap/Button';
 
 function Carousel() {
-  const categories = [
-    { id: 1, name: 'Category 1' },
-    { id: 2, name: 'Category 2' },
-    { id: 3, name: 'Category 3' },
-    { id: 4, name: 'Category 4' },
-  ];
 
   return (
-    <div>
-      <h1>Carousel</h1>
-      Hello World.
-    </div>
+    <Stack>
+      <div
+        className='carousel-container'
+      >
+        <UncontrolledCarousel />
+      </div>
+      <div
+        className='bottom-page-container'
+      >
+        <Button className='top-right-quarter-circle-button' size='lg'>Go Back</Button>
+        <div className='center-text-container'>
+          <p>Use your hand to swipe through the cards.</p>
+          <p>Move hand to “Go Back”</p>
+        </div>
+        <Button className='top-left-quarter-circle-button' size='lg'>View this event</Button>
+      </div>
+    </Stack>
   );
 }
 
