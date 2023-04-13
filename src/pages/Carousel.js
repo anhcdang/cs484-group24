@@ -1,11 +1,12 @@
 import React from 'react';
 import UncontrolledCarousel from '../components/UncontrolledCarousel';
-
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import { useParams } from 'react-router-dom';
 
 function Carousel() {
-
+  const { category } = useParams();
+  console.log(category);
   return (
     <Stack>
       <div
