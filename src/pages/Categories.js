@@ -3,9 +3,11 @@ import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../static/styles.css';
 import sample_img from '../static/images/sample.png';
+// import Carousel from './Carousel.js';
+import { useNavigate } from 'react-router-dom';
 
 function Categories() {
-
+  const navigate = useNavigate();
   const cards = [
     { category_type_id: 1, title: 'Social', src: sample_img },
     { category_type_id: 2, title: 'Academics', src: sample_img },
@@ -16,11 +18,18 @@ function Categories() {
   ];
 
   const handleCardClick = (request_type_id) => {
-    
+      const category = cards[request_type_id-1].title;
+      navigate(`/carousel/${category}`);
+
   };
 
   return (
-    <div className="container-fluid">
+    <div>
+    <div className='center-text-container'>
+          <h1>Categories</h1>
+          <p>Move hand to a category card to view events.</p>
+        </div>
+    <div className="category-container-fluid">
       <div className="row row-cols-3">
         {cards.map((card) => (
           <div key={card.category_type_id} className="col">
@@ -33,6 +42,7 @@ function Categories() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

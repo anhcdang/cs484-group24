@@ -2,10 +2,22 @@
     background-color: lightgray;
 }
 
-.card {
-    margin: 20px;
-    padding: 10px;
+.category-container-fluid{
+    margin-left: 5%;
 }
+
+.card {
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+  
 
 .carousel-container {
     display: flex;
