@@ -1,17 +1,23 @@
 import React from 'react';
 import UncontrolledCarousel from '../components/UncontrolledCarousel';
-
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import { useParams } from 'react-router-dom';
+import { events } from '../components/Event';
+//import { slides } from '../components/UncontrolledCarousel';
 
+
+//<UncontrolledCarousel slides={slides} />
 function Carousel() {
-
-  return (
+  const { category } = useParams();
+  console.log(category);
+  return (       
     <Stack>
       <div
-        className='carousel-container'
+        className='carousel-container'        
       >
-        <UncontrolledCarousel />
+       
+       <UncontrolledCarousel slides={events.map(event => ({src: event.image, alt: event.title}))} />
       </div>
       <div
         className='bottom-page-container'
