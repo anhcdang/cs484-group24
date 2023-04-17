@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/categories" element={<Categories />} />
-          <Route path="/carousel" element={<Carousel />} />
+          <Route path="/carousel/:category" element={<Carousel />} />
         </Routes>
       </Router>
       {/* <SampleCardComponent text={sampleCardText1} /> */}
