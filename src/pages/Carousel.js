@@ -2,27 +2,56 @@ import React from 'react';
 import UncontrolledCarousel from '../components/UncontrolledCarousel';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
-import { useParams } from 'react-router-dom';
-import { events } from '../components/Event';
-//import { slides } from '../components/UncontrolledCarousel';
+import { useParams, useNavigate } from 'react-router-dom';
+import { ACADEMIC_EVENTS, ARTS_EVENTS, CULTURAL_EVENTS, MOCK_EVENTS, MUSIC_EVENTS, SOCIAL_EVENTS, SPORTS_EVENTS } from '../models/Event';
 
+const SOCIAL = 'Social'
+const ACADEMICS = 'Academics'
+const SPORTS = 'Sports'
+const MUSIC = 'Music'
+const CULTURAL = 'Cultural'
+const ARTS = 'Arts'
 
-//<UncontrolledCarousel slides={slides} />
 function Carousel() {
+  const navigate = useNavigate();
   const { category } = useParams();
   console.log(category);
+
+  // TODO: is there a better way to implement this?
+  const getCategoryEvents = () => {
+    switch(category) {
+      case SOCIAL:
+        return SOCIAL_EVENTS
+      case ACADEMICS:
+        return ACADEMIC_EVENTS
+      case SPORTS:
+        return SPORTS_EVENTS
+      case MUSIC:
+        return MUSIC_EVENTS
+      case CULTURAL:
+        return CULTURAL_EVENTS
+      case ARTS:
+        return ARTS_EVENTS
+      default:
+        return MOCK_EVENTS
+    } 
+  }
+
+  const handleGoBack = () => {
+    navigate('/categories');
+  }
+
   return (       
     <Stack>
       <div
         className='carousel-container'        
       >
-       
-       <UncontrolledCarousel slides={events.map(event => ({src: event.image, alt: event.title}))} />
+       <UncontrolledCarousel events={getCategoryEvents()} />
       </div>
       <div
         className='bottom-page-container'
       >
-        <Button className='top-right-quarter-circle-button' size='lg'>Go Back</Button>
+        <Button className='top-right-quarter-circle-button' size='lg' onClick={handleGoBack}>Go Back</Button>
         <div className='center-text-container'>
           <p>Use your hand to swipe through the cards.</p>
           <p>Move hand to “Go Back”</p>

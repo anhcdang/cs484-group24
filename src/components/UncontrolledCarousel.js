@@ -1,18 +1,17 @@
 import Carousel from 'react-bootstrap/Carousel';
-import { events } from "../components/Event";
 import React from "react";
 
 
 // Version using event object model
-function UncontrolledCarousel() {
+function UncontrolledCarousel(props) {
   return (
     <Carousel className="carousel" variant="dark">
-      {events.map((event, index) => (
+      {props.events.map((event, index) => (
         <Carousel.Item key={index}>
           <img src={event.image} alt={event.title} />
           <Carousel.Caption>
             <h3>{event.title}</h3>
-            <p>{event.date}</p>
+            <p>{event.date.toString()}</p>
             <p>{event.location}</p>
             <p>{event.description}</p>
           </Carousel.Caption>
