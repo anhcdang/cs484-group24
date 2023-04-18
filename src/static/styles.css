@@ -3,11 +3,11 @@
 }
 
 .category-container-fluid{
-    margin-left: 5%;
+    margin-left: 15%;
 }
 
 .card {
-    width: 80%;
+    width: 60%;
     margin: 10px;
     padding: 10px;
     transition: all 0.2s ease-in-out;
