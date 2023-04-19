@@ -20,7 +20,7 @@ export const frames = {
       }
     },
   
-    get_right_wrist_command: function (frame) {
+    get_wrist_command: function (frame) {
       var command = null;
       if (frame.people.length < 1) {
         return command;
