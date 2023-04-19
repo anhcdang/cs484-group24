@@ -12,12 +12,20 @@ export const frames = {
     start: function() {
       var url = "ws://" + host + "/frames";
       frames.socket = new WebSocket(url);
-      frames.socket.onmessage = function (event) {
-        var command = frames.get_wrist_command(JSON.parse(event.data));
-        if (command !== null) {
-          sendWristCommand(command);
-        }
-      }
+      return new Promise((resolve, reject) => {
+        frames.socket.onmessage = function (event) {
+          var command = frames.get_wrist_command(JSON.parse(event.data));
+          if (command !== null) {
+            // sendWristCommand(command);
+            // console.log(command);
+            resolve(command);
+          }
+        };
+        frames.socket.onerror = function (error) {
+          reject(error);
+        };
+      });
+     
     },
   
     get_wrist_command: function (frame) {
@@ -33,11 +41,11 @@ export const frames = {
       var right_wrist_x = (frame.people[0].joints[14].position.x - pelvis_x) * -1;
       var right_wrist_y = (frame.people[0].joints[14].position.y - pelvis_y) * -1;
       var right_wrist_z = (frame.people[0].joints[14].position.z - pelvis_z) * -1;
-      var left_wrist_x = (frame.people[0].joints[7].position.x - pelvis_x) * -1;
-      var left_wrist_y = (frame.people[0].joints[7].position.y - pelvis_y) * -1;
-      var left_wrist_z = (frame.people[0].joints[7].position.z - pelvis_z) * -1;
+      // var left_wrist_x = (frame.people[0].joints[7].position.x - pelvis_x) * -1;
+      // var left_wrist_y = (frame.people[0].joints[7].position.y - pelvis_y) * -1;
+      // var left_wrist_z = (frame.people[0].joints[7].position.z - pelvis_z) * -1;
   
-      if (right_wrist_z < 100 || left_wrist_z < 100) {
+      if (right_wrist_z < 100) {
         return command;
       }
 
@@ -58,20 +66,20 @@ export const frames = {
       // -----------------------------------------
 
       // NEED TO TEST, NUMBERS ARE NOT FINAL
-      if ((right_wrist_x < 200 && right_wrist_x > -200) || (left_wrist_x < 200 && left_wrist_x > -200)) {
-        if (right_wrist_y < 100 || left_wrist_y < 100) {
+      if ((right_wrist_x < 200 && right_wrist_x > -200)) {
+        if (right_wrist_y < 100) {
           command = DOWN;
         }
-      } else if (left_wrist_x < -200) {
-        if (left_wrist_y > 500) {
+      } else if (right_wrist_x < -200) {
+        if (right_wrist_y > 500) {
             command = UPPER_LEFT
-        } else if (left_wrist_y < 100) {
+        } else if (right_wrist_y < 200) {
             command = LOWER_LEFT
         }
       } else if (right_wrist_x > 200) {
         if (right_wrist_y > 500) {
             command = UPPER_RIGHT
-        } else if (right_wrist_y < 100) {
+        } else if (right_wrist_y < 200) {
             command = LOWER_RIGHT
         }
       }
@@ -79,24 +87,24 @@ export const frames = {
     }
   };
 
-  function sendWristCommand(command) {
-    switch (command) {
-      case DOWN:
-        console.log(DOWN);
-        break;
-      case UPPER_LEFT:
-        console.log(UPPER_LEFT);
-        break;
-      case LOWER_LEFT:
-        console.log(LOWER_LEFT);
-        break;
-      case UPPER_RIGHT:
-        console.log(UPPER_RIGHT)
-        break;
-      case LOWER_RIGHT:
-        console.log(LOWER_RIGHT);
-        break;
-      default:
-        break;
-    }
-  }
+  // function sendWristCommand(command) {
+  //   switch (command) {
+  //     case DOWN:
+  //       console.log(DOWN);
+  //       break;
+  //     case UPPER_LEFT:
+  //       console.log(UPPER_LEFT);
+  //       break;
+  //     case LOWER_LEFT:
+  //       console.log(LOWER_LEFT);
+  //       break;
+  //     case UPPER_RIGHT:
+  //       console.log(UPPER_RIGHT)
+  //       break;
+  //     case LOWER_RIGHT:
+  //       console.log(LOWER_RIGHT);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }
