@@ -7,7 +7,8 @@ import sample_img2 from '../static/images/sample-category-images/sample2.jpeg';
 import sample_img3 from '../static/images/sample-category-images/sample3.jpeg';
 import sample_img4 from '../static/images/sample-category-images/sample4.jpeg';
 // import Carousel from './Carousel.js';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';   
+
 
 function Categories() {
   const navigate = useNavigate();
