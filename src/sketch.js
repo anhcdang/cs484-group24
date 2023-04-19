@@ -14,7 +14,7 @@ export const frames = {
       frames.socket = new WebSocket(url);
       return new Promise((resolve, reject) => {
         frames.socket.onmessage = function (event) {
-          var command = frames.get_right_wrist_command(JSON.parse(event.data));
+          var command = frames.get_wrist_command(JSON.parse(event.data));
           if (command !== null) {
             // sendWristCommand(command);
             // console.log(command);
@@ -28,7 +28,7 @@ export const frames = {
      
     },
   
-    get_right_wrist_command: function (frame) {
+    get_wrist_command: function (frame) {
       var command = null;
       if (frame.people.length < 1) {
         return command;
