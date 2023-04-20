@@ -3,11 +3,10 @@ import UncontrolledCarousel from '../components/UncontrolledCarousel';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ACADEMIC_EVENTS, ARTS_EVENTS, CULTURAL_EVENTS, MOCK_EVENTS, MUSIC_EVENTS, SOCIAL_EVENTS, SPORTS_EVENTS } from '../models/Event';
+import { ACADEMIC_EVENTS, ARTS_EVENTS, CULTURAL_EVENTS, MOCK_EVENTS, MUSIC_EVENTS} from '../models/Event';
 
-const SOCIAL = 'Social'
+
 const ACADEMICS = 'Academics'
-const SPORTS = 'Sports'
 const MUSIC = 'Music'
 const CULTURAL = 'Cultural'
 const ARTS = 'Arts'
@@ -20,12 +19,9 @@ function Carousel() {
   // TODO: is there a better way to implement this?
   const getCategoryEvents = () => {
     switch(category) {
-      case SOCIAL:
-        return SOCIAL_EVENTS
+     
       case ACADEMICS:
         return ACADEMIC_EVENTS
-      case SPORTS:
-        return SPORTS_EVENTS
       case MUSIC:
         return MUSIC_EVENTS
       case CULTURAL:
