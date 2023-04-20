@@ -2,10 +2,9 @@
 // import SampleEvent2 from '../static/images/sample-event-images/sample-event-2.png';
 // import SampleEvent3 from '../static/images/sample-event-images/sample-event-3.png';
 
-import SampleEvent1 from 'https://cdn.shopify.com/s/files/1/0550/0354/5750/products/DCEDBB_600x.png?v=1614620713';
-import SampleEvent2 from 'https://cdn.shopify.com/s/files/1/0476/2238/9921/products/F8E3E8_grande.png?v=1617660540';
-import SampleEvent3 from 'https://cdn.shopify.com/s/files/1/1057/4058/products/AlphakrylikBabyBlue_2000x.png?v=1626842229';
-
+const SampleEvent1 = 'https://cdn.shopify.com/s/files/1/0550/0354/5750/products/DCEDBB_600x.png?v=1614620713';
+const SampleEvent2 = 'https://cdn.shopify.com/s/files/1/0476/2238/9921/products/F8E3E8_grande.png?v=1617660540';
+const SampleEvent3 = 'https://cdn.shopify.com/s/files/1/1057/4058/products/AlphakrylikBabyBlue_2000x.png?v=1626842229';
 
 
 
