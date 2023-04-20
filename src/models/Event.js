@@ -1,6 +1,12 @@
-import SampleEvent1 from '../static/images/sample-event-images/sample-event-1.png';
-import SampleEvent2 from '../static/images/sample-event-images/sample-event-2.png';
-import SampleEvent3 from '../static/images/sample-event-images/sample-event-3.png';
+// import SampleEvent1 from '../static/images/sample-event-images/sample-event-1.png';
+// import SampleEvent2 from '../static/images/sample-event-images/sample-event-2.png';
+// import SampleEvent3 from '../static/images/sample-event-images/sample-event-3.png';
+
+const SampleEvent1 = 'https://cdn.shopify.com/s/files/1/0550/0354/5750/products/DCEDBB_600x.png?v=1614620713';
+const SampleEvent2 = 'https://cdn.shopify.com/s/files/1/0476/2238/9921/products/F8E3E8_grande.png?v=1617660540';
+const SampleEvent3 = 'https://cdn.shopify.com/s/files/1/1057/4058/products/AlphakrylikBabyBlue_2000x.png?v=1626842229';
+
+
 
 export default class Event {
     constructor(title, date, location, image, description) {
@@ -36,146 +42,102 @@ export default class Event {
     ),
   ];
 
-export const SOCIAL_EVENTS = [  
-  new Event(
-    'Social Event 1',
-    new Date(2023, 4, 1),
-    'Location 1',
-    SampleEvent1,
-    'Description of Social Event 1'
-  ),
-  new Event(
-    'Social Event 2',
-    new Date(2023, 4, 8),
-    'Location 2',
-    SampleEvent2,
-    'Description of Social Event 2'
-  ),
-  new Event(
-    'Social Event 3',
-    new Date(2023, 4, 15),
-    'Location 3',
-    SampleEvent3,
-    'Description of Social Event 3'
-  ),
-];
+
 
 export const ACADEMIC_EVENTS = [  
   new Event(
-    'Academics Event 1',
-    new Date(2023, 4, 1),
-    'Location 1',
+    'Chess Club',
+    new Date(2023, 4, 1),    
+    'LC 209',
     SampleEvent1,
-    'Description of Academics Event 1'
+    'Join us for a night of strategy and skill at our chess club event! Whether you are a beginner or a seasoned pro, you will love the challenge of this classic game.'
   ),
   new Event(
-    'Academics Event 2',
+    'Academic Decathalon',
     new Date(2023, 4, 8),
-    'Location 2',
+    'WLH 115',
     SampleEvent2,
-    'Description of Academics Event 2'
+    'Put your knowledge to the test at our academic decathlon! Join us for a day of competition and fun as we challenge teams to excel in a variety of subjects.'
   ),
   new Event(
-    'Academics Event 3',
+    'Trivia',
     new Date(2023, 4, 15),
-    'Location 3',
+    'Davies Auditorium',
     SampleEvent3,
-    'Description of Academics Event 3'
+    'Put your knowledge to the test at our trivia night! Join us for a fun and friendly competition as we challenge teams to answer questions across a wide range of topics.'
   ),
 ];
 
-export const SPORTS_EVENTS = [  
-  new Event(
-    'Sports Event 1',
-    new Date(2023, 4, 1),
-    'Location 1',
-    SampleEvent1,
-    'Description of Social Event 1'
-  ),
-  new Event(
-    'Sports Event 2',
-    new Date(2023, 4, 8),
-    'Location 2',
-    SampleEvent2,
-    'Description of Sports Event 2'
-  ),
-  new Event(
-    'Sports Event 3',
-    new Date(2023, 4, 15),
-    'Location 3',
-    SampleEvent3,
-    'Description of Sports Event 3'
-  ),
-];
+
 
 export const MUSIC_EVENTS = [  
   new Event(
-    'Music Event 1',
+    'Salsa Dancing',
     new Date(2023, 4, 1),
-    'Location 1',
+    'Ninth Square',
     SampleEvent1,
-    'Description of Music Event 1'
+    'Get ready to heat up the dance floor with our salsa dancing event! Whether you are a seasoned dancer or just starting out, you will love the vibrant energy and infectious rhythms of this Latin-inspired dance style.'
   ),
   new Event(
-    'Music Event 2',
+    'Karaoke',
     new Date(2023, 4, 8),
-    'Location 2',
+    'Davies Auditorium',
     SampleEvent2,
-    'Description of Music Event 2'
+    'Get ready to unleash your inner superstar! Join us for a night of karaoke, where you can sing your heart out to all your favorite songs. This event is perfect for anyone who loves to sing, dance, or just have a good time.'
   ),
   new Event(
-    'Music Event 3',
+    'Acapella Performance',
     new Date(2023, 4, 15),
-    'Location 3',
+    'SSS',
     SampleEvent3,
-    'Description of Music Event 3'
+    'Come and experience the magic of live music with our talented a cappella group! Get ready to be blown away by the vocal harmonies and dynamic performances of our singers as they take you on a musical journey through popular hits and classics. Join us for a night of unforgettable entertainment and great music!'
   ),
 ];
 
 export const CULTURAL_EVENTS = [  
   new Event(
-    'Cultural Event 1',
+    'Asian Pacific American Heritage Month Festival',
     new Date(2023, 4, 1),
-    'Location 1',
+    'Old Campus',
     SampleEvent1,
-    'Description of Cultural Event 1'
+    'This festival celebrates the rich and diverse cultures, histories, and contributions of Asian Pacific Americans through performances, exhibits, workshops, and interactive activities.'
   ),
   new Event(
-    'Cultural Event 2',
+    'Multicultural Fair',
     new Date(2023, 4, 8),
-    'Location 2',
+    'Lanman Center',
     SampleEvent2,
-    'Description of Cultural Event 2'
+    'The multicultural event celebrates diversity and promotes cultural exchange through food, music, dance, and art from a variety of countries and traditions.'
   ),
   new Event(
-    'Cultural Event 3',
+    'Diversity Dialogue',
     new Date(2023, 4, 15),
-    'Location 3',
+    'Yale Law School',
     SampleEvent3,
-    'Description of Cultural Event 3'
+    'The diversity dialogue event provides a safe and open space for students, faculty, and staff to engage in honest and respectful discussions about cultural issues and differences, promoting mutual understanding and appreciation.'
   ),
 ];
 
 export const ARTS_EVENTS = [  
   new Event(
-    'Arts Event 1',
+    'Film Festival',
     new Date(2023, 4, 1),
-    'Location 1',
+    'Yale British Art Gallery',
     SampleEvent1,
-    'Description of Arts Event 1'
+    'The film festival features a selection of independent, international, and classic films that showcase diverse genres, cultures, and perspectives, inviting the audience to engage in film theory and production discussions with filmmakers and industry professionals.'
   ),
   new Event(
-    'Arts Event 2',
+    '"Lost and Found" Theater Production',
     new Date(2023, 4, 8),
-    'Location 2',
+    'Yale Repertory Theater',
     SampleEvent2,
-    'Description of Arts Event 2'
+    'The play follows the journey of a young woman named Maya, who embarks on a quest for self-discovery and encounters a diverse group of characters along the way.'
   ),
   new Event(
-    'Arts Event 3',
+    '"Reflections on Nature"',
     new Date(2023, 4, 15),
     'Location 3',
     SampleEvent3,
-    'Description of Arts Event 3'
+    '"Reflections on Nature" is an exhibition showcasing the work of local and national artists who use a variety of media to depict the beauty and fragility of the natural world.'
   ),
 ];
