@@ -5,10 +5,10 @@ import React from "react";
 // Version using event object model
 function UncontrolledCarousel(props) {
   return (
-    <Carousel className="carousel" variant="dark">
+    <Carousel className="carousel" variant="dark" activeIndex={props.index}>
       {props.events.map((event, index) => (
-        <Carousel.Item key={index}>
-          <img src={event.image} alt={event.title} />
+        <Carousel.Item key={index} style={{backgroundColor: event.color}}>
+          {/* <img src={event.image} alt={event.title} /> */}
           <Carousel.Caption>
             <h3>{event.title}</h3>
             <p>{event.date.toString()}</p>
