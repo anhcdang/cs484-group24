@@ -53,7 +53,7 @@ export default class Event {
 export const ACADEMIC_EVENTS = [  
   new Event(
     'Chess Club',
-    new Date(2023, 4, 1),    
+    new Date(2023, 4, 1, 12, 30, 0),    
     'LC 209',
     SampleEvent1,
     'Join us for a night of strategy and skill at our chess club event! Whether you are a beginner or a seasoned pro, you will love the challenge of this classic game.',
@@ -61,7 +61,7 @@ export const ACADEMIC_EVENTS = [
   ),
   new Event(
     'Academic Decathalon',
-    new Date(2023, 4, 8),
+    new Date(2023, 4, 8, 16, 0, 0),
     'WLH 115',
     SampleEvent2,
     'Put your knowledge to the test at our academic decathlon! Join us for a day of competition and fun as we challenge teams to excel in a variety of subjects.',
@@ -69,7 +69,7 @@ export const ACADEMIC_EVENTS = [
   ),
   new Event(
     'Trivia',
-    new Date(2023, 4, 15),
+    new Date(2023, 4, 15, 18, 30, 0),
     'Davies Auditorium',
     SampleEvent3,
     'Put your knowledge to the test at our trivia night! Join us for a fun and friendly competition as we challenge teams to answer questions across a wide range of topics.',
@@ -82,7 +82,7 @@ export const ACADEMIC_EVENTS = [
 export const MUSIC_EVENTS = [  
   new Event(
     'Salsa Dancing',
-    new Date(2023, 4, 1),
+    new Date(2023, 4, 1, 20, 15, 0),
     'Ninth Square',
     SampleEvent1,
     'Get ready to heat up the dance floor with our salsa dancing event! Whether you are a seasoned dancer or just starting out, you will love the vibrant energy and infectious rhythms of this Latin-inspired dance style.',
@@ -90,7 +90,7 @@ export const MUSIC_EVENTS = [
   ),
   new Event(
     'Karaoke',
-    new Date(2023, 4, 8),
+    new Date(2023, 4, 8, 22, 25, 0),
     'Davies Auditorium',
     SampleEvent2,
     'Get ready to unleash your inner superstar! Join us for a night of karaoke, where you can sing your heart out to all your favorite songs. This event is perfect for anyone who loves to sing, dance, or just have a good time.',
@@ -98,7 +98,7 @@ export const MUSIC_EVENTS = [
   ),
   new Event(
     'Acapella Performance',
-    new Date(2023, 4, 15),
+    new Date(2023, 4, 15, 19, 30, 0),
     'SSS',
     SampleEvent3,
     'Come and experience the magic of live music with our talented a cappella group! Get ready to be blown away by the vocal harmonies and dynamic performances of our singers as they take you on a musical journey through popular hits and classics. Join us for a night of unforgettable entertainment and great music!',
@@ -109,7 +109,7 @@ export const MUSIC_EVENTS = [
 export const CULTURAL_EVENTS = [  
   new Event(
     'Asian Pacific American Heritage Month Festival',
-    new Date(2023, 4, 1),
+    new Date(2023, 4, 1, 12, 0, 0),
     'Old Campus',
     SampleEvent1,
     'This festival celebrates the rich and diverse cultures, histories, and contributions of Asian Pacific Americans through performances, exhibits, workshops, and interactive activities.',
@@ -117,7 +117,7 @@ export const CULTURAL_EVENTS = [
   ),
   new Event(
     'Multicultural Fair',
-    new Date(2023, 4, 8),
+    new Date(2023, 4, 8, 15, 30, 0),
     'Lanman Center',
     SampleEvent2,
     'The multicultural event celebrates diversity and promotes cultural exchange through food, music, dance, and art from a variety of countries and traditions.',
@@ -125,7 +125,7 @@ export const CULTURAL_EVENTS = [
   ),
   new Event(
     'Diversity Dialogue',
-    new Date(2023, 4, 15),
+    new Date(2023, 4, 15, 16, 25, 0),
     'Yale Law School',
     SampleEvent3,
     'The diversity dialogue event provides a safe and open space for students, faculty, and staff to engage in honest and respectful discussions about cultural issues and differences, promoting mutual understanding and appreciation.',
@@ -136,7 +136,7 @@ export const CULTURAL_EVENTS = [
 export const ARTS_EVENTS = [  
   new Event(
     'Film Festival',
-    new Date(2023, 4, 1),
+    new Date(2023, 4, 1, 20, 0),
     'Yale British Art Gallery',
     SampleEvent1,
     'The film festival features a selection of independent, international, and classic films that showcase diverse genres, cultures, and perspectives, inviting the audience to engage in film theory and production discussions with filmmakers and industry professionals.',
@@ -144,7 +144,7 @@ export const ARTS_EVENTS = [
   ),
   new Event(
     '"Lost and Found" Theater Production',
-    new Date(2023, 4, 8),
+    new Date(2023, 4, 8, 18, 30, 0),
     'Yale Repertory Theater',
     SampleEvent2,
     'The play follows the journey of a young woman named Maya, who embarks on a quest for self-discovery and encounters a diverse group of characters along the way.',
@@ -152,7 +152,7 @@ export const ARTS_EVENTS = [
   ),
   new Event(
     '"Reflections on Nature"',
-    new Date(2023, 4, 15),
+    new Date(2023, 4, 15, 16, 0, 0),
     'Location 3',
     SampleEvent3,
     '"Reflections on Nature" is an exhibition showcasing the work of local and national artists who use a variety of media to depict the beauty and fragility of the natural world.',

@@ -9,11 +9,11 @@ function UncontrolledCarousel(props) {
       {props.events.map((event, index) => (
         <Carousel.Item key={index} style={{backgroundColor: event.color}}>
           {/* <img src={event.image} alt={event.title} /> */}
-          <Carousel.Caption>
-            <h3>{event.title}</h3>
-            <p>{event.date.toString()}</p>
-            <p>{event.location}</p>
-            <p>{event.description}</p>
+          <Carousel.Caption style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "240px"}}>
+          <h3 style={{ fontSize: '3rem' }}>{event.title}</h3>
+            <p style={{fontSize: "18px"}}>{event.date.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</p>
+            <p style={{fontSize: "18px"}}>{event.location}</p>
+            <p style={{fontSize: "20px"}}>{event.description}</p>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
@@ -22,29 +22,6 @@ function UncontrolledCarousel(props) {
 }
 
 export default UncontrolledCarousel;
-
-//Hard coded version:
-
-// function UncontrolledCarousel({ slides }) {
-//   return (
-//     <Carousel className="carousel" variant="dark">
-//       {slides.map((slide, index) => (
-//         <Carousel.Item key={index}>
-//           <img src={slide.src} alt={slide.alt} />
-//         </Carousel.Item>
-//       ))}
-//     </Carousel>
-//   );
-// }
-
-// const slides = [
-//   { src: SampleEvent1, alt: "First slide" },
-//   { src: SampleEvent2, alt: "Second slide" },
-//   { src: SampleEvent3, alt: "Third slide" },
-// ];
-
-// export default UncontrolledCarousel;
-// export { slides };
 
 
 
