@@ -6,7 +6,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { frames } from '../sketch';
 import { ACADEMIC_EVENTS, ARTS_EVENTS, CULTURAL_EVENTS, MOCK_EVENTS, MUSIC_EVENTS} from '../models/Event';
 
-
+const UP = "UP"
+const DOWN = "DOWN"
 const ACADEMICS = 'Academics'
 const MUSIC = 'Music'
 const CULTURAL = 'Cultural'
@@ -81,7 +82,7 @@ function Carousel() {
         break;
       case LOWER_LEFT:
         console.log(LOWER_LEFT);
-        handleGoBack();
+        // handleGoBack();
         break;
       case UPPER_RIGHT:
         console.log(UPPER_RIGHT);
@@ -90,6 +91,13 @@ function Carousel() {
       case LOWER_RIGHT:
         console.log(LOWER_RIGHT);
         break;
+      case UP:
+        handleGoBack();
+        console.log(UP);
+        break;
+      case DOWN:
+        console.log(DOWN);
+      break;
       default:
         break;
     }
@@ -112,24 +120,18 @@ function Carousel() {
 
   return (       
     <Stack>
-      <div
-        className='carousel-container'        
-      >
-       <UncontrolledCarousel 
-          // events={getCategoryEvents()} 
-          events={events}
-          index={index}
-        />
+      <div className='top-page-container'>
+        <Button className='go-back-button' size='lg' onClick={handleGoBack}>Go Back</Button>
       </div>
-      <div
-        className='bottom-page-container'
-      >
-        <Button className='top-right-quarter-circle-button' size='lg' onClick={handleGoBack}>Go back</Button>
-        <div className='right-end-text-container'>
+      <div className='carousel-container'>
+       <UncontrolledCarousel events={events} index={index} />
+      </div>
+      <div className='bottom-page-container'>
+        {/* <Button className='top-right-quarter-circle-button' size='lg' onClick={handleGoBack}>Go back</Button> */}
+        <div className='center-text-container'>
           <p>Wave your right hand to the upper left/upper right ARROWS to browse through the carousel.</p>
           <p>Wave your right hand to the lower left GREEN button to go back.</p>
         </div>
-        {/* <Button className='top-left-quarter-circle-button' size='lg'>View this event</Button> */}
       </div>
     </Stack>
   );

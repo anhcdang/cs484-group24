@@ -1,5 +1,6 @@
 const host = "cpsc484-03.yale.internal:8888";
 
+const UP = "UP"
 const DOWN = "DOWN"
 const UPPER_LEFT = "UPPER LEFT"
 const LOWER_LEFT = "LOWER LEFT"
@@ -67,7 +68,9 @@ export const frames = {
 
       // NEED TO TEST, NUMBERS ARE NOT FINAL
       if ((right_wrist_x < 200 && right_wrist_x > -200)) {
-        if (right_wrist_y < 100) {
+        if (right_wrist_y > 500) {
+          command = UP;
+        } else if (right_wrist_y < 100) {
           command = DOWN;
         }
       } else if (right_wrist_x < -200) {
