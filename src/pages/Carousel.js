@@ -25,7 +25,7 @@ function Carousel() {
 
   const navigate = useNavigate();
   const { category } = useParams();
-  console.log(category);
+  // console.log(category);
 
   // TODO: is there a better way to implement this?
   const getCategoryEvents = () => {
@@ -108,15 +108,25 @@ function Carousel() {
   })
 
   useEffect(() => {
-    frames
-      .start()
-      .then((command) => {
-        sendWristCommand(command);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  });
+    frames.start()
+  })
+
+  useEffect(() => {
+    setInterval(() => {
+      sendWristCommand(frames.command)
+    }, 500);
+  },[])
+
+  // useEffect(() => {
+  //   frames
+  //     .start()
+  //     .then((command) => {
+  //       sendWristCommand(command);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // });
 
   return (       
     <Stack>
