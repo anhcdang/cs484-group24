@@ -1,20 +1,40 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { Link } from "react-router-dom";
-import Categories from "./Categories";
+import React, { useEffect, useCallback } from 'react';
 import "../static/styles.css";
-import Button from 'react-bootstrap/Button';
-import { useParams, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
+import { frames } from '../sketch';
 
-const startButton = useCallback(() => {
-  navigate('/carousel');
-}, [navigate]);
-
+const UP = "UP"
 export default function App() {
+  const navigate = useNavigate();
+  const startButton = useCallback(() => {
+    navigate('/categories');
+  }, [navigate]);
+
+  const sendWristCommand = useCallback((command) => {
+    switch (command) {
+      case UP:
+        console.log(UP);
+        startButton();
+        break;
+      default:
+        break;
+    }
+  }, [startButton]);
+
+  useEffect(() => {
+    frames.start()
+  })
+
+  useEffect(() => {
+    setInterval(() => {
+      sendWristCommand(frames.command)
+    }, 500);
+  },[sendWristCommand])
   return (
     <div className="container">
       <div className="circle-container">
-        <Button className='Start-Button' size='lg' onclick={startButton}> Start </Button>
-          <div className="circle">
+          <div className="circle" onClick={startButton}>
+              Start
           </div>
       </div>
       <div>
