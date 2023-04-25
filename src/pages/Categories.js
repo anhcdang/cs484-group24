@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo} from 'react';
 import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../static/styles.css';
@@ -65,7 +65,7 @@ function Categories() {
     setInterval(() => {
       sendWristCommand(frames.command)
     }, 500);
-  },[])
+  },[sendWristCommand])
 
   // useEffect(() => {
   //   // console.log(command)

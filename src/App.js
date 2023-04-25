@@ -4,6 +4,7 @@ import './static/styles.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Categories from './pages/Categories';
 import Carousel from './pages/Carousel';
+import Start from './pages/Start';
 // import { frames } from './sketch';
 // import SampleCardComponent from './components/SampleCardComponent';
 
@@ -22,6 +23,7 @@ function App() {
     <Stack style={{height: '100vh', 'width': '100vw'}}>
       <Router>
         <Routes>
+          <Route path="/" element={<Start />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/carousel/:category" element={<Carousel />} />
         </Routes>
