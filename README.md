@@ -3,7 +3,7 @@
 Description:
 ************
 
-EventFinder is a project that helps students find different events to attend on campus. The two main tasks that EventFinder addresses are the ability to browse through different events or information with arm movements, and the ability to curate a customized feed by selecting categories of interest.
+EventFinder is a project that helps students find different events to attend on campus. The two main tasks that EventFinder addresses are the ability to explpre through different events or information using physical gestures, and the ability to curate a customized feed by selecting categories of interest.
 
 Installation
 ************
