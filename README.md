@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+                                                            EventFinder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description:
+************
 
-## Available Scripts
+EventFinder is a project that helps students find different events to attend on campus. The two main tasks that EventFinder addresses are the ability to browse through different events or information with arm movements, and the ability to curate a customized feed by selecting categories of interest.
 
-In the project directory, you can run:
+Installation
+************
 
-### `npm start`
+To run EventFinder, you need to install its dependencies. Run the following command:
+```
+./run.sh
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Constraints:
+************
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+When using EventFinder, the user should stand approximately 1-2 meters away from the display. When moving their arm to trigger the actions on the page, the user should hold each position for about 5 seconds for it to work effectively (e.g., keep their arm in the upper right position to choose the upper right category).
 
-### `npm test`
+Collaboration Report:
+*********************
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Anh Dang, acd83
 
-### `npm run build`
+Cindy Keeya, ck687
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+My primary responsibility was to work on the carousel page. I did not have any prior experience with React, so I took the time to learn how to create a carousel and an event object model.
+After learning, I started coding the front-end for the uncontrolled carousel. I created the event object model, which consisted of arrays of events for each category that could be rotated through depending on which category the user clicks.
+To implement this model, I had to redo the uncontrolled carousel component to fit with it. This involved using a version of a hashmap function to achieve the desired functionality.
+In addition to working on the carousel page, I aided in testing the display by being a test subject for the project and giving feedback on the usability. Finally, I wrote up the README document, which explains how to install dependencies and run the project, provides a brief description of the project, and includes a collaboration record that specifies what each team member contributed to the prototype.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sianna Xiao, srx2
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Siyan Pu, sp2448
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
