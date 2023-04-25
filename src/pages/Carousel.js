@@ -134,7 +134,7 @@ function Carousel() {
         <Button className='go-back-button' size='lg' onClick={handleGoBack}>Go Back</Button>
       </div>
       <div className='carousel-container'>
-       <UncontrolledCarousel events={events} index={index} />
+       <UncontrolledCarousel category={category} events={events} index={index} />
       </div>
       <div className='bottom-page-container'>
         {/* <Button className='top-right-quarter-circle-button' size='lg' onClick={handleGoBack}>Go back</Button> */}
