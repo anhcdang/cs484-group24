@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo} from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../static/styles.css';
@@ -58,17 +58,19 @@ function Categories() {
   }, [handleCardClick]);
 
   useEffect(() => {
-    frames
-      .start()
-      .then((command) => {
-        sendWristCommand(command);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [sendWristCommand]);
+    frames.start()
+  })
 
+  useEffect(() => {
+    setInterval(() => {
+      sendWristCommand(frames.command)
+    }, 500);
+  },[])
 
+  // useEffect(() => {
+  //   // console.log(command)
+  //   sendWristCommand(command)
+  // }, [command])
 
   return (
     <div>

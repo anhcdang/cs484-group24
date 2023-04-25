@@ -1,5 +1,6 @@
 const host = "cpsc484-03.yale.internal:8888";
 
+const UP = "UP"
 const DOWN = "DOWN"
 const UPPER_LEFT = "UPPER LEFT"
 const LOWER_LEFT = "LOWER LEFT"
@@ -8,6 +9,7 @@ const LOWER_RIGHT = "LOWER RIGHT"
 
 export const frames = {
     socket: null,
+    command: null,
   
     start: function() {
       var url = "ws://" + host + "/frames";
@@ -15,6 +17,7 @@ export const frames = {
       return new Promise((resolve, reject) => {
         frames.socket.onmessage = function (event) {
           var command = frames.get_wrist_command(JSON.parse(event.data));
+          frames.command = command;
           if (command !== null) {
             // sendWristCommand(command);
             // console.log(command);
@@ -25,7 +28,6 @@ export const frames = {
           reject(error);
         };
       });
-     
     },
   
     get_wrist_command: function (frame) {
@@ -67,19 +69,21 @@ export const frames = {
 
       // NEED TO TEST, NUMBERS ARE NOT FINAL
       if ((right_wrist_x < 200 && right_wrist_x > -200)) {
-        if (right_wrist_y < 100) {
+        if (right_wrist_y > 400) {
+          command = UP;
+        } else if (right_wrist_y < 100) {
           command = DOWN;
         }
       } else if (right_wrist_x < -200) {
-        if (right_wrist_y > 500) {
+        if (right_wrist_y > 400) {
             command = UPPER_LEFT
-        } else if (right_wrist_y < 200) {
+        } else if (right_wrist_y < 300) {
             command = LOWER_LEFT
         }
       } else if (right_wrist_x > 200) {
-        if (right_wrist_y > 500) {
+        if (right_wrist_y > 400) {
             command = UPPER_RIGHT
-        } else if (right_wrist_y < 200) {
+        } else if (right_wrist_y < 300) {
             command = LOWER_RIGHT
         }
       }
