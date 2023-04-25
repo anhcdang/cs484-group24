@@ -10,7 +10,7 @@ function UncontrolledCarousel(props) {
         <Carousel.Item key={index} style={{backgroundColor: event.color}}>
           {/* <img src={event.image} alt={event.title} /> */}
           <Carousel.Caption style={{padding: "240px"}}>
-          <h3 style={{ fontSize: '3rem' }}>{event.title}</h3>
+          <h3 style={{ fontSize: '3rem' }}>{props.category + ": " + event.title}</h3>
             <p style={{fontSize: "18px"}}>{event.date.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</p>
             <p style={{fontSize: "18px"}}>{event.location}</p>
             <p style={{fontSize: "20px"}}>{event.description}</p>
