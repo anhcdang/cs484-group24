@@ -108,14 +108,18 @@ function Carousel() {
   })
 
   useEffect(() => {
-    frames.start()
+    const timer = setTimeout(() => {
+      // do something 1 sec after clicked has changed
+      frames.start()
+   }, 2000);
+   return () => clearTimeout(timer);
   })
 
   useEffect(() => {
     setInterval(() => {
       sendWristCommand(frames.command)
-    }, 500);
-  },[])
+    }, 1000);
+  },[sendWristCommand])
 
   // useEffect(() => {
   //   frames
