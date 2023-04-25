@@ -123,15 +123,17 @@
   }
   
   .circle {
-    width: 500px;
-    height: 230px;
-    border-radius: 0 0 210px 210px;
+    width: 250px;
+    height: 115px;
+    border-radius: 0 0 125px 125px;
     background-color: lightblue;
     color: black;
     font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    user-select: none;
   }
   
   .text-large {
@@ -146,4 +148,5 @@
     text-align: center;
     margin-top: 1rem;
   }
+  
   

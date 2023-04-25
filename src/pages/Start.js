@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from 'react';
+import { Link } from "react-router-dom";
+import Categories from "./Categories";
 import "../static/styles.css";
+import Button from 'react-bootstrap/Button';
+import { useParams, useNavigate } from 'react-router-dom';
 
-function App() {
+const startButton = useCallback(() => {
+  navigate('/carousel');
+}, [navigate]);
+
+export default function App() {
   return (
     <div className="container">
       <div className="circle-container">
-        <div className="circle">Start</div>
+        <Button className='Start-Button' size='lg' onclick={startButton}> Start </Button>
+          <div className="circle">
+          </div>
       </div>
-      <div className="text-large">Hello</div>
-      <div className="text-small">Wave your hand over the 'Start' to view campus events</div>
+      <div>
+        <div className="text-large">Hello</div>
+        <div className="text-small">Move your hand to view campus events</div>
+      </div>
     </div>
   );
 }
 
-export default App;
+
