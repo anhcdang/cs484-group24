@@ -136,7 +136,9 @@ function Carousel() {
   return (       
     <Stack>
       <div className='top-page-container'>
-        <Button className='go-back-button' size='lg' onClick={handleGoBack}>Exit/Next Slide</Button>
+        <Button className='go-back-button' size='lg' onClick={handleGoBack}>
+          <b>Exit</b> (raise left hand) / <b>Next Slide</b> (raise right hand)
+        </Button>
       </div>
       <div className='carousel-container'>
        <UncontrolledCarousel category={category} events={events} index={index} />

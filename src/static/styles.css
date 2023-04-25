@@ -73,11 +73,11 @@
 }
 
 .go-back-button {
-    width: 20%;
+    width: 40%;
     height: 100%;
     border-radius: 0 0 20rem 20rem !important;
     border: none !important;
-    background-color: #9FB798 !important;
+    background-color: #798c73 !important;
 }
 
 p { 
