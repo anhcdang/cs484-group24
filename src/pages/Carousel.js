@@ -13,10 +13,11 @@ const MUSIC = 'Music'
 const CULTURAL = 'Cultural'
 const ARTS = 'Arts'
 
-const UPPER_LEFT = "UPPER LEFT"
+// const UPPER_LEFT = "UPPER LEFT"
 const LOWER_LEFT = "LOWER LEFT"
-const UPPER_RIGHT = "UPPER RIGHT"
+// const UPPER_RIGHT = "UPPER RIGHT"
 const LOWER_RIGHT = "LOWER RIGHT"
+const LEFT_UP = "LEFT UP"
 
 function Carousel() {  
   const [index, setIndex] = useState(0);
@@ -54,13 +55,13 @@ function Carousel() {
     } 
   }
 
-  const onPrevClick = useCallback(() => {
-    if (index === 0) {
-      setIndex(events.length - 1)
-    } else {
-      setIndex(index - 1)
-    }
-  }, [events.length, index]);
+  // const onPrevClick = useCallback(() => {
+  //   if (index === 0) {
+  //     setIndex(events.length - 1)
+  //   } else {
+  //     setIndex(index - 1)
+  //   }
+  // }, [events.length, index]);
 
   const onNextClick = useCallback(() => {
     if (index === events.length - 1) {
@@ -76,16 +77,16 @@ function Carousel() {
 
   const sendWristCommand = useCallback((command) => {
     switch (command) {
-      case UPPER_LEFT:
-        console.log(UPPER_LEFT);
-        onPrevClick();
-        break;
+      // case UPPER_LEFT:
+      //   console.log(UPPER_LEFT);
+      //   onPrevClick();
+      //   break;
       case LOWER_LEFT:
         console.log(LOWER_LEFT);
         // handleGoBack();
         break;
-      case UPPER_RIGHT:
-        console.log(UPPER_RIGHT);
+      case LEFT_UP:
+        console.log(LEFT_UP);
         onNextClick();
         break;
       case LOWER_RIGHT:
@@ -101,7 +102,7 @@ function Carousel() {
       default:
         break;
     }
-  }, [onPrevClick, handleGoBack, onNextClick]);
+  }, [handleGoBack, onNextClick]);
 
   useEffect(() => {
     getCategoryEvents();
@@ -135,7 +136,7 @@ function Carousel() {
   return (       
     <Stack>
       <div className='top-page-container'>
-        <Button className='go-back-button' size='lg' onClick={handleGoBack}>Go Back</Button>
+        <Button className='go-back-button' size='lg' onClick={handleGoBack}>Exit/Next Slide</Button>
       </div>
       <div className='carousel-container'>
        <UncontrolledCarousel category={category} events={events} index={index} />
@@ -143,8 +144,8 @@ function Carousel() {
       <div className='bottom-page-container'>
         {/* <Button className='top-right-quarter-circle-button' size='lg' onClick={handleGoBack}>Go back</Button> */}
         <div className='center-text-container'>
-          <p>Wave your right hand to the upper left/upper right ARROWS to browse through the carousel.</p>
-          <p>Wave your right hand to the lower left GREEN button to go back.</p>
+          <p>Wave your <b>left</b> hand to the upper GREEN button to browse through the carousel.</p>
+          <p>Wave your <b>right</b> hand to the upper GREEN button to exit.</p>
         </div>
       </div>
     </Stack>

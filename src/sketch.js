@@ -6,6 +6,7 @@ const UPPER_LEFT = "UPPER LEFT"
 const LOWER_LEFT = "LOWER LEFT"
 const UPPER_RIGHT = "UPPER RIGHT"
 const LOWER_RIGHT = "LOWER RIGHT"
+const LEFT_UP = "LEFT UP"
 
 export const frames = {
     socket: null,
@@ -17,10 +18,11 @@ export const frames = {
       return new Promise((resolve, reject) => {
         frames.socket.onmessage = function (event) {
           var command = frames.get_wrist_command(JSON.parse(event.data));
-          frames.command = command;
+          
           if (command !== null) {
             // sendWristCommand(command);
             // console.log(command);
+            frames.command = command;
             resolve(command);
           }
         };
@@ -43,12 +45,18 @@ export const frames = {
       var right_wrist_x = (frame.people[0].joints[14].position.x - pelvis_x) * -1;
       var right_wrist_y = (frame.people[0].joints[14].position.y - pelvis_y) * -1;
       var right_wrist_z = (frame.people[0].joints[14].position.z - pelvis_z) * -1;
-      // var left_wrist_x = (frame.people[0].joints[7].position.x - pelvis_x) * -1;
-      // var left_wrist_y = (frame.people[0].joints[7].position.y - pelvis_y) * -1;
+      var left_wrist_x = (frame.people[0].joints[7].position.x - pelvis_x) * -1;
+      var left_wrist_y = (frame.people[0].joints[7].position.y - pelvis_y) * -1;
       // var left_wrist_z = (frame.people[0].joints[7].position.z - pelvis_z) * -1;
   
       if (right_wrist_z < 100) {
         return command;
+      }
+
+      if ((left_wrist_x < 200 && left_wrist_x > -200)) {
+        if (left_wrist_y > 400) {
+          command = LEFT_UP;
+        } 
       }
 
       // CURRENT DISPLAY LOGIC??:
