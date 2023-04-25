@@ -12,12 +12,16 @@ To run EventFinder, you need to install its dependencies. Run the following comm
 ```
 ./run.sh
 ```
+The following command is needed the first time the project is uploaded.
+```
+npm install
+```
 
 ## Constraints:
 - When using EventFinder, the user should stand approximately 1-2 meters away from the display. 
 - When moving their arm to trigger the actions on the page, the user should hold each position for about 5 seconds for it to work effectively (e.g., keep their arm in the upper right position to choose the upper right category). 
 - For best performance, only one person should be in front of the display (multiple people may impact responsiveness).
-- Only right-hand movements will be registered.
+- When using one hand, keep the other hand in DOWN direction.
 
 ***
 
